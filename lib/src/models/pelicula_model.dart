@@ -17,6 +17,9 @@ class Peliculas{
 }
 
 class Pelicula {
+
+  String uniqueId;
+
   double popularity;
   int voteCount;
   bool video;
@@ -65,6 +68,28 @@ class Pelicula {
     voteAverage         = json['vote_average'] / 1;
     overview            = json['overview'];
     releaseDate         = json['release_date'];
+
+  }
+
+  getPosterImg(){
+
+    if(posterPath == null){
+      return 'https://www.flaticon.es/svg/static/icons/svg/1201/1201519.svg';
+    }
+    else {
+      return 'https://image.tmdb.org/t/p/w500/$posterPath';
+    }    
+
+  }
+
+  getBackgroundImg(){
+
+    if(posterPath == null){
+      return 'https://www.flaticon.es/svg/static/icons/svg/1201/1201519.svg';
+    }
+    else {
+      return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+    }    
 
   }
 
